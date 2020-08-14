@@ -31,7 +31,7 @@ class IceboxView: UIView {
     button.setImage(allImage, for: .normal)
     button.imageView?.contentMode = .scaleAspectFit
     
-    button.tintColor = ColorZip.ivory
+    button.tintColor = ColorZip.midiumBlue
     
     button.addTarget(self, action: #selector(whenDidTapSeeAllMaterialButton(_:)), for: .touchUpInside)
     

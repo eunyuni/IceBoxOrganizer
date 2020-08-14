@@ -22,7 +22,7 @@ class MaterialsInIceboxView: UIView {
     
     button.setPreferredSymbolConfiguration(.init(pointSize: 30), forImageIn: .normal)
     button.setImage(plusImage, for: .normal)
-    button.tintColor = ColorZip.ivory
+    button.tintColor = ColorZip.midiumBlue
     
     button.addTarget(self, action: #selector(whenDidAddNewMaterialButtonTouchUpInside(_:)), for: .touchUpInside)
     

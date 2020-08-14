@@ -26,7 +26,7 @@ class DetailMaterialView: UIView {
   
   private let titleView: UIView = {
     let titleView = UIView()
-    titleView.backgroundColor = ColorZip.ivory
+    titleView.backgroundColor = ColorZip.midiumGray
     return titleView
   }()
   
@@ -46,8 +46,8 @@ class DetailMaterialView: UIView {
   
   private let titleLabel: UILabel = {
     let titleLabel = UILabel()
-    titleLabel.backgroundColor = ColorZip.ivory
-    titleLabel.textColor = ColorZip.basicGreen
+    titleLabel.backgroundColor = .clear
+    titleLabel.textColor = ColorZip.midiumBlue
     titleLabel.text = "Detail Material Info"
     titleLabel.font = .systemFont(ofSize: 25, weight: .bold)
     return titleLabel
@@ -109,16 +109,17 @@ class DetailMaterialView: UIView {
     let trasgCanImage = UIImage(systemName: "trash")
     button.setImage(trasgCanImage, for: .normal)
     button.setPreferredSymbolConfiguration(.init(scale: .default), forImageIn: .normal)
-    button.tintColor = .systemPink
+    button.tintColor = .red
     button.addTarget(self, action: #selector(whenDidTouchUpInsideRemoveButton(_:)), for: .touchUpInside)
     return button
   }()
   
   private let saveButton: UIButton = {
     let button = UIButton(type: .system)
-    button.setTitle("save", for: .normal)
-    button.setTitleColor(ColorZip.peanut, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+    let checkImage = UIImage(systemName: "checkmark.circle.fill")
+    button.setImage(checkImage, for: .normal)
+    button.setPreferredSymbolConfiguration(.init(scale: .default), forImageIn: .normal)
+    button.tintColor = ColorZip.ivory
     button.addTarget(self, action: #selector(whenDidTouchUpInsideSaveButton(_:)), for: .touchUpInside)
     return button
   }()
@@ -126,8 +127,8 @@ class DetailMaterialView: UIView {
   private let categoryButton: UIButton = {
     let categoryButton = UIButton(type: .system)
     categoryButton.setTitle("Select Category", for: .normal)
-    categoryButton.setTitleColor(ColorZip.basicGreen, for: .normal)
-    categoryButton.backgroundColor = ColorZip.ivory
+    categoryButton.setTitleColor(ColorZip.midiumBlue, for: .normal)
+    categoryButton.backgroundColor = ColorZip.midiumGray
     categoryButton.widthAnchor.constraint(equalToConstant: 180).isActive = true
     categoryButton.layer.cornerRadius = 4
     categoryButton.addTarget(self, action: #selector(whenDidTouchUpInsideCategoryButton(_:)), for: .touchUpInside)
@@ -325,7 +326,7 @@ class DetailMaterialView: UIView {
     self.addSubview(infoView)
 
     labelList.forEach {
-      $0.textColor = ColorZip.lightRed
+      $0.textColor = ColorZip.midiumBlue
       $0.backgroundColor = .white
       $0.font = .systemFont(ofSize: Padding.fontSize, weight: .bold)
       $0.textAlignment = .left
